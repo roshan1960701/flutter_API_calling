@@ -1,5 +1,7 @@
+import 'package:api_calling/Screens/employeeScreen.dart';
 import 'package:api_calling/Screens/getApi.dart';
 import 'package:api_calling/Screens/getApiTwo.dart';
+import 'package:api_calling/Screens/getApiTwoUser.dart';
 import 'package:api_calling/Screens/gridViewApi.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +56,35 @@ class _HomePageState extends State<HomePage> {
               height: 40,
               elevation: 10.0,
               child: Text("Get API from response"),
-            )
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => getApiTwoUser()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Get API from Response User"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => employeeScreen()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Get API from Response Employee"),
+            ),
           ],
         ),
       ),

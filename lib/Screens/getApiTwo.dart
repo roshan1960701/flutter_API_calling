@@ -25,7 +25,6 @@ class _getApiTwoState extends State<getApiTwo> {
   getHttpData() async {
     var response = await http.get('https://jsonplaceholder.typicode.com/posts');
     if (response.statusCode == 200) {
-      // var jsonResponse = convert.jsonDecode(response.body.toString());
       final post = postFromJson(response.body.toString());
       setState(() {
         postData = post;
@@ -43,20 +42,24 @@ class _getApiTwoState extends State<getApiTwo> {
       appBar: AppBar(
         title: Text("Fetch API using Response"),
       ),
-      body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 10.0),
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                color: Colors.indigoAccent,
-                height: 100,
-                width: 100,
-                child: Text('${postData[index].id}'),
-              ),
-            );
-          }),
+      body: !check
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 10.0),
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    color: Colors.indigoAccent,
+                    height: 100,
+                    width: 100,
+                    child: Text('${postData[index].id}'),
+                  ),
+                );
+              }),
     );
   }
 }

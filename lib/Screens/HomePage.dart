@@ -1,0 +1,63 @@
+import 'package:api_calling/Screens/getApi.dart';
+import 'package:api_calling/Screens/getApiTwo.dart';
+import 'package:api_calling/Screens/gridViewApi.dart';
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => getAPi()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Get API"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => gridViewApi()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Get API in Manual GridView"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => getApiTwo()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Get API from response"),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -3,6 +3,8 @@ import 'package:api_calling/Screens/getApi.dart';
 import 'package:api_calling/Screens/getApiTwo.dart';
 import 'package:api_calling/Screens/getApiTwoUser.dart';
 import 'package:api_calling/Screens/gridViewApi.dart';
+import 'package:api_calling/Screens/postApi.dart';
+import 'package:api_calling/Screens/unsplashScreen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -84,6 +86,20 @@ class _HomePageState extends State<HomePage> {
               height: 40,
               elevation: 10.0,
               child: Text("Get API from Response Employee"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => unsplashScreen()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("Unsplash"),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:api_calling/Modal/user.dart';
+import 'package:bd_progress_bar/bdprogreebar.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
@@ -43,7 +44,7 @@ class _getApiTwoUserState extends State<getApiTwoUser> {
       ),
       body: !check
           ? Center(
-              child: CircularProgressIndicator(),
+              child: Loader4(),
             )
           : ListView.builder(
               itemCount: userData.length,

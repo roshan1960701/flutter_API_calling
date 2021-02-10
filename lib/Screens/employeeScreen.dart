@@ -1,7 +1,17 @@
 import 'package:api_calling/Modal/Employee.dart';
+import 'package:bd_progress_bar/bdprogreebar.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+import 'package:bd_progress_bar/loaders/color_loader.dart';
+import 'package:bd_progress_bar/loaders/color_loader_2.dart';
+import 'package:bd_progress_bar/loaders/color_loader_3.dart';
+import 'package:bd_progress_bar/loaders/color_loader_4.dart';
+import 'package:bd_progress_bar/loaders/color_loader_5.dart';
+import 'package:bd_progress_bar/loaders/color_loader_6.dart';
+import 'package:bd_progress_bar/loaders/color_loader_7.dart';
+import 'package:bd_progress_bar/loaders/dot_type.dart';
+import 'package:bd_progress_bar/loaders/flip_loader.dart';
 
 class employeeScreen extends StatefulWidget {
   employeeScreen({Key key}) : super(key: key);
@@ -44,11 +54,7 @@ class _employeeScreenState extends State<employeeScreen> {
         title: Text("Employee API"),
       ),
       body: !check
-          ? Center(
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
-              ),
-            )
+          ? Center(child: Loader2())
           : ListView.builder(
               itemCount: empData.length,
               itemBuilder: (context, index) {

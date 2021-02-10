@@ -1,6 +1,16 @@
+import 'package:bd_progress_bar/bdprogreebar.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+import 'package:bd_progress_bar/loaders/color_loader.dart';
+import 'package:bd_progress_bar/loaders/color_loader_2.dart';
+import 'package:bd_progress_bar/loaders/color_loader_3.dart';
+import 'package:bd_progress_bar/loaders/color_loader_4.dart';
+import 'package:bd_progress_bar/loaders/color_loader_5.dart';
+import 'package:bd_progress_bar/loaders/color_loader_6.dart';
+import 'package:bd_progress_bar/loaders/color_loader_7.dart';
+import 'package:bd_progress_bar/loaders/dot_type.dart';
+import 'package:bd_progress_bar/loaders/flip_loader.dart';
 
 class getAPi extends StatefulWidget {
   getAPi({Key key}) : super(key: key);
@@ -62,7 +72,7 @@ class _getAPiState extends State<getAPi> {
                 );
               })
           : Center(
-              child: CircularProgressIndicator(),
+              child: Loader6(),
             ),
     );
   }

@@ -1,4 +1,6 @@
+import 'package:api_calling/Screens/ListView.dart';
 import 'package:api_calling/Screens/employeeScreen.dart';
+import 'package:api_calling/Screens/fetchPost.dart';
 import 'package:api_calling/Screens/getApi.dart';
 import 'package:api_calling/Screens/getApiTwo.dart';
 import 'package:api_calling/Screens/getApiTwoUser.dart';
@@ -100,6 +102,34 @@ class _HomePageState extends State<HomePage> {
               height: 40,
               elevation: 10.0,
               child: Text("Unsplash"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ListViewScreen()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("ListView"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => fetchPost()));
+              },
+              color: Colors.orangeAccent,
+              minWidth: 120,
+              height: 40,
+              elevation: 10.0,
+              child: Text("POST API"),
             ),
           ],
         ),
